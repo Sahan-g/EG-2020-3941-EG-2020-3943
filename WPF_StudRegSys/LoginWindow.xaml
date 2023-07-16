@@ -1,0 +1,166 @@
+﻿<Window x:Class="WPF_StudRegSys.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_StudRegSys"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <local:LoginWindowVM/>
+    </Window.DataContext>
+    <Border CornerRadius="10">
+        <Border.Background>
+            <ImageBrush ImageSource="\images\background.jpg"/>
+        </Border.Background>
+        
+    <Border CornerRadius="10" 
+            Opacity="0.8"
+            BorderThickness="3">
+        <Border.BorderBrush>
+            <LinearGradientBrush>
+                <GradientStop Color="#462ad8" Offset="0"/>
+                <GradientStop Color="#da34ae" Offset="0.25"/>
+                <GradientStop Color="#8a16c1" Offset="0.5"/>
+                <GradientStop Color="#462ad8" Offset="0.9"/>
+                
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#1b1448" Offset="0.75"/>
+                
+            </LinearGradientBrush>
+        </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                   
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="LOG IN"
+                           FontSize="10"
+                           Foreground="DarkGray"
+                           FontFamily="Monserrat"
+                           VerticalAlignment="Center"
+                           Margin="10 0 0 0"
+                           Grid.Column="0"/>
+
+                    <Button x:Name="minimize"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Content="-"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Style="{StaticResource minimizeButton}"
+                        Command="{Binding minimizeCommand }"
+                        />
+                    <Button x:Name="closeb"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Content="X"
+                        Style="{StaticResource closeButton}"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Command="{Binding closeCommand }"
+                        />
+
+                </Grid>
+                <StackPanel Grid.Row="1" Orientation="Vertical"
+                            Width="250" Margin="0 35 0 35">
+
+                    <Image Source="/Images/logo.png" Width="100"
+                           Height="100"/>
+
+                    <TextBlock Text="Welcome"
+                               Foreground="White"
+                               Background="Transparent"
+                               FontSize="25"
+                               FontFamily="montserrat"
+                               Margin="0 15 0 5"
+                               FontWeight="Medium"
+                              HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Please enter your login credentials to continue"
+                               Foreground="LightGray"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="username"
+                               Foreground="DarkGray"
+                               
+                               FontSize="12"
+                               FontFamily="montserrat"
+                               Margin="0 15 0 5"
+                              FontWeight="Medium">
+                       
+                    </TextBlock>
+
+                    <TextBox Style="{StaticResource loginWindowTextBox}" Text="{Binding UserName}" >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="Images\user-icon.png" Stretch="None"
+                                        AlignmentX="Left"  />
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="password"
+                               Foreground="DarkGray"
+                               
+                               FontSize="12"
+                               FontFamily="montserrat"
+                               Margin="0 15 0 5"
+                              FontWeight="Medium">
+
+                    </TextBlock>
+                    <TextBox Style="{StaticResource loginWindowTextBox}"  Text="{Binding Password}" >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="Images\key-icon.png" Stretch="None"
+                                        AlignmentX="Left"  />
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <Button Content="Log in" Style="{StaticResource login}"
+                            Command="{Binding loginCommand}"/>
+
+
+
+                </StackPanel>
+                
+                
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>
+
+
+<!--<StackPanel>
+            <TextBox x:Name="UsernameText" Width="100" BorderThickness="1" Height="50" Text="{Binding UserName}" />
+            -->
+<!--<TextBox x:Name="PasswordText" Width="100" BorderThickness="1" Height="50" Text="{Binding Password}"  />-->
+<!--
+            <PasswordBox Name="password"  Password="{Binding Pass}"/>
+            <Button Name="Login_button" Width="100" Height="40" Background="LightBlue" 
+            BorderBrush="Black" BorderThickness="1" Command="{Binding loginCommand}"
+            >Login</Button>
+
+        </StackPanel>-->

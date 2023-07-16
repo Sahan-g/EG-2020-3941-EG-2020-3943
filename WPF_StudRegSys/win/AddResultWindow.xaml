@@ -1,0 +1,164 @@
+﻿<Window x:Class="WPF_StudRegSys.win.AddResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_StudRegSys.win"
+        xmlns:local1="clr-namespace:WPF_StudRegSys.viewmodels"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="AddResultWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local1:ViewResultWindowVM/>
+    </Window.DataContext>
+    <!--<Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Student ID:       " FontSize="16" Padding="5" Margin ="5"/>
+                <TextBox FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding StudentId}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Module Code:  " FontSize="16" Padding="5" Margin ="5"/>
+                <TextBox FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding ModuleCode}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Result :             " FontSize="16" Padding="5" Margin ="5"/>
+                <TextBox FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding Grade}" ></TextBox>
+            </StackPanel>
+
+
+            <Button FontSize="16" Padding="5" Margin ="5" Width="200" Content="Insert" Command="{Binding InsertResultCommand}"/>
+        </StackPanel>
+    </Grid>-->
+    <Border CornerRadius="20">
+
+        <Border.Background>
+            <ImageBrush  ImageSource="\images\adminbackground.jpg" />
+        </Border.Background>
+        <Border BorderThickness="3" CornerRadius="20"
+               Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0 0">
+                    <GradientStop Color="#b143cc" Offset="0"/>
+                    <GradientStop Color="#1497FF" Offset="0.7"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background  >
+                <LinearGradientBrush >
+                    <GradientStop Color="#050634" Offset="0"/>
+                    <GradientStop Color="#041742" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Add Grade "
+                           FontSize="10"
+                           Foreground="DarkGray"
+                           FontFamily="Monserrat"
+                           VerticalAlignment="Center"
+                           Margin="10 0 0 0"
+                           Grid.Column="0"/>
+
+                    <Button x:Name="minimize"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Content="-"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Style="{StaticResource minimizeButton}"
+                        Command="{Binding MinimizeCommand }"
+                        />
+                    <Button x:Name="closeb"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Content="X"
+                        Style="{StaticResource closeButton}"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Command="{Binding CloseCommand }"
+                        />
+
+                </Grid>
+
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Margin="100 30 100 15">
+                        <TextBlock Text="Student ID :" Style="{StaticResource AddStudentTextBlock}" FontSize="16" Padding="5" Margin ="5"/>
+                        <TextBox FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding StudentId, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource AddStudentTextBox}" ></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="100 15">
+                        <TextBlock Style="{StaticResource AddStudentTextBlock}" Text="Module Code :" FontSize="16" Padding="5" Margin ="5"/>
+                       
+                        <TextBox  Style="{StaticResource AddStudentTextBox }" FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding ModuleCode, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin=" 100 15 100 15">
+                        <TextBlock Style="{StaticResource AddStudentTextBlock}" Text="Grade :        " FontSize="16" Padding="5" Margin ="5"/>
+                        <!--<TextBox Style="{StaticResource AddStudentTextBox}" FontSize="16" Padding="5" Margin ="5" Width="300" Text="{Binding Grade}" ></TextBox>-->
+
+                        <ComboBox Width="300" Height="30" 
+                                  ItemsSource="{Binding ResOptions}"
+                                  SelectedValue="{Binding Grade}"  Style="{StaticResource Default}" >
+                           
+                        </ComboBox>
+                        
+                    </StackPanel>
+
+
+                    <Button   Style="{StaticResource UserLandButton}"  Command="{Binding InsertResultCommand}"  Width="220"  Margin="30 30 0 30" 
+                                  FontWeight="Medium" FontSize="15  ">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Border BorderBrush="White"  Style="{StaticResource UserLandBorder}" BorderThickness="0" Background="#34ef9e"
+                                            CornerRadius="10">
+                                    <StackPanel Orientation="Horizontal"   >
+                                        <Image Source="\images\grade.png" Width="40" Height="40" Margin="10 0 0 0"/>
+                                        <TextBlock Style="{StaticResource UserLandTextBox}" Text="Add Grade" VerticalAlignment="Center" Padding="40 10 10 10" FontFamily="Segoe UI Variable Display" />
+
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+
+                        </Button.Template>
+
+
+
+                    </Button>
+                </StackPanel>
+
+
+
+
+
+
+
+
+
+
+            </Grid>
+
+
+        </Border>
+    </Border>
+
+
+    
+</Window>

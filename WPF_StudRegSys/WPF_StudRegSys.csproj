@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\AddM.png" />
+    <None Remove="images\AddUser.png" />
+    <None Remove="images\adminbackg.jpg" />
+    <None Remove="images\adminbackground.jpg" />
+    <None Remove="images\backg.jpg" />
+    <None Remove="images\background.jpg" />
+    <None Remove="images\DeleteUser.png" />
+    <None Remove="images\EditUser.png" />
+    <None Remove="images\grade.png" />
+    <None Remove="images\key-icon.png" />
+    <None Remove="images\login.jpg" />
+    <None Remove="images\logo.png" />
+    <None Remove="images\module.png" />
+    <None Remove="images\save.png" />
+    <None Remove="images\student-icon_final.png" />
+    <None Remove="images\Student.png" />
+    <None Remove="images\user-icon.png" />
+    <None Remove="images\userdata.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\AddM.png" />
+    <Resource Include="images\AddUser.png" />
+    <Resource Include="images\adminbackg.jpg" />
+    <Resource Include="images\adminbackground.jpg" />
+    <Resource Include="images\backg.jpg" />
+    <Resource Include="images\background.jpg" />
+    <Resource Include="images\DeleteUser.png" />
+    <Resource Include="images\EditUser.png" />
+    <Resource Include="images\grade.png" />
+    <Resource Include="images\key-icon.png" />
+    <Resource Include="images\login.jpg" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\module.png" />
+    <Resource Include="images\save.png" />
+    <Resource Include="images\Student.png" />
+    <Resource Include="images\user-icon.png" />
+    <Resource Include="images\userdata.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,310 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Button" x:Key="minimizeButton">
+        <Setter Property="Background" Value="#28aeed"/>
+        <Setter Property="Foreground" Value="white"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border Height="20" Width="20" CornerRadius="10"
+                      Background="{TemplateBinding Background}"      >
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center">
+
+                        </ContentPresenter>
+                    </Border>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        
+        
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#278bef"/>
+            </Trigger>
+        </Style.Triggers>
+        
+        
+        
+    </Style>
+
+
+    <Style TargetType="Button" x:Key="closeButton">
+        <Setter Property="Background" Value="#da34ae"/>
+        <Setter Property="Foreground" Value="white"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border Height="20" Width="20" CornerRadius="10" 
+                      Background="{TemplateBinding Background}"      >
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                         >
+
+                        </ContentPresenter>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#c62dae"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="loginWindowTextBox">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="CaretBrush" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontFamily" Value="montserrat"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="Padding" Value="20 0 0 0"/>
+
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Button" x:Key="login">
+        <Setter Property="Background" Value="#462adb"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter  Property="Margin" Value="20 0 0 0"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border Margin="0 20 0 0" Height="40" Width="150" CornerRadius="20" 
+                      Background="{TemplateBinding Background}"      >
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                         >
+
+                        </ContentPresenter>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#28aeed"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="textBlockstyle" >
+        <Setter Property="Foreground" Value="white"/>
+        <Setter Property="FontFamily" Value="montserrat"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+
+    <Style TargetType="Button"  x:Key="AdminLandingButton">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Margin" Value="20"/>
+        <Setter  Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7f34ef" Offset="0"/>
+                    <GradientStop Color="#843af2" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border Margin="0 20 0 0" Height="60" Width="200" CornerRadius="30" 
+                      Background="{TemplateBinding Background}"      >
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                         >
+
+                        </ContentPresenter>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#7f34ef" Offset="0"/>
+                            <GradientStop Color="#9c63f0" Offset="0.8"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="#40216f"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+
+
+
+            </Trigger>
+        </Style.Triggers>
+
+
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="CreateUser">
+        <Setter Property="Foreground" Value="white"/>
+        <Setter Property="Background" Value="#05152F"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="CaretBrush" Value="LightGray"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="BorderThickness" Value="0 0 0 2"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="CreateUserButton">
+        <Setter Property="Background" Value="#462adb"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter  Property="Margin" Value="0 0 0 0"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Border Margin="0 40 0 0" Height="40" Width="150" CornerRadius="20" 
+                      Background="{TemplateBinding Background}"      >
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                         >
+
+                        </ContentPresenter>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#28aeed"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+
+    </Style>
+
+    <Style TargetType="Button" x:Key="UserLandButton">
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="IndianRed"/>
+                <Setter Property="Foreground" Value="GhostWhite"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="UserLandTextBox">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="AliceBlue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Border" x:Key="UserLandBorder">
+        <Style.Triggers>
+            <Trigger Property="IsMouseCaptured" Value="True">
+                <Setter Property="Background" Value="AliceBlue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="AddStudentTextBlock">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Padding" Value="25 5 5 5"/>
+            
+            <Setter Property="Width" Value="200"/>
+        </Style.Setters>
+        
+        
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="AddStudentTextBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#221239"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+            <Setter Property="BorderBrush" Value="#4670EC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="25 5 5 5"/>
+
+
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsFocused"  Value="True" >
+                <Setter Property="BorderBrush" Value="Black"/>
+                
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style TargetType="ComboBox" x:Key="Default">
+
+        <Style.Setters>
+            
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+
+            <Setter Property="Foreground" Value="#221239"/>
+            <Setter Property="Padding" Value="25 5 5 5"/>
+
+        </Style.Setters>
+    </Style>
+
+
+    <Style TargetType="ComboBoxItem" x:Key="itemDef">
+
+        <Style.Setters>
+            <Setter Property="Background" Value="#221239"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style.Setters>
+    </Style>
+    
+
+</ResourceDictionary>

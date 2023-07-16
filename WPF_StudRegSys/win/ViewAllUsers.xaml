@@ -1,0 +1,104 @@
+﻿<Window x:Class="WPF_StudRegSys.win.ViewAllUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_StudRegSys.win"
+        xmlns:local11="clr-namespace:WPF_StudRegSys.viewmodels"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="ViewAllUsers" Height="450" Width="800"
+        >
+    <Window.DataContext>
+        <local11:ViewAllUsersVM/>
+    </Window.DataContext>
+    <Border CornerRadius="20">
+        <Border.Background>
+            <ImageBrush ImageSource="\images\userdata.jpg" />
+        </Border.Background>
+        <Border CornerRadius="20" BorderThickness="3"
+                Opacity="0.5">
+            <Border.BorderBrush >
+                <LinearGradientBrush>
+                    <GradientStop Color="#006D86" Offset="0"/>
+                    <GradientStop Color="#004CAC" Offset="0.5"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#050634" Offset="0"/>
+                    <GradientStop Color="#041742" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="All Users"
+                           FontSize="10"
+                           Foreground="DarkGray"
+                           FontFamily="Monserrat"
+                           VerticalAlignment="Center"
+                           Margin="20 0 0 0"
+                           Grid.Column="0"/>
+
+
+
+                    <Button x:Name="minimize"
+                        
+                        Grid.Column="1"
+                        Content="-"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Style="{StaticResource minimizeButton}"
+                        Command="{Binding MinimizeCommand }"
+                        />
+                    <Button x:Name="closeb"
+                        
+                        Grid.Column="2"
+                        Content="X"
+                        Style="{StaticResource closeButton}"
+                        FontSize="15"
+                        Margin="0 2 0 0"
+                        Cursor="Hand"
+                        Command="{Binding CloseCommand }"
+                        />
+
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <DataGrid Grid.Row="1"  Background="#0a0f44"
+                    Grid.Column="1" ItemsSource="{Binding Users}"/>
+            </Grid>
+
+        </Border>
+        
+    </Border>
+    
+</Window>
